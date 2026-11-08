@@ -1,0 +1,27 @@
+[project]
+name = "evidencecheck"
+version = "0.1.0"
+description = "Automated fact-checking, citation hygiene, and claim entailment verification engine."
+authors = [{ name = "Sri Ram Kunamsetty" }]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi>=0.115.0",
+    "uvicorn>=0.30.0",
+    "pydantic>=2.8.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "httpx>=0.27.0",
+    "ruff>=0.5.0",
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EvidenceCheck - AI Fact-Checking & Citation Verification Engine</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="header-left">
+      <div class="logo-badge">EC</div>
+      <div>
+        <h1>EvidenceCheck <span class="tag">Fact Verification Engine</span></h1>
+        <p class="subtitle">Automated Claim Extraction, Citation Hygiene & Entailment Grounding</p>
+      </div>
+    </div>
+    <div class="header-right">
+      <select id="case-select" class="dropdown">
+        <option value="" disabled selected>Loading cases...</option>
+      </select>
+      <button id="btn-verify" class="btn btn-primary">Verify Claims</button>
+      <button id="btn-export-md" class="btn btn-outline">Export Audit (MD)</button>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <!-- Top KPI Grid -->
+    <section class="kpi-grid">
+      <div class="kpi-card">
+        <span class="kpi-label">Grounding Ratio</span>
+        <span class="kpi-value" id="kpi-grounding">--</span>
+        <span class="kpi-subtext" id="kpi-grounding-desc">Proportion of supported claims</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-label">Citation Precision</span>
+        <span class="kpi-value" id="kpi-precision">--</span>
+        <span class="kpi-subtext" id="kpi-precision-desc">Accuracy of cited sources</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-label">Hallucination Risk Tier</span>
+        <span class="kpi-value" id="kpi-risk">--</span>
+        <span class="kpi-subtext" id="kpi-risk-desc">Categorical risk assessment</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-label">Claims Breakdown</span>
+        <span class="kpi-value" id="kpi-breakdown">--</span>
+        <span class="kpi-subtext" id="kpi-breakdown-desc">Supported / Contradicted / Unverified</span>
+      </div>
+    </section>
+
+    <!-- Workspace Split -->
+    <div class="content-split">
+      <!-- Left: Chatbot Response & Source Evidence -->
+      <section class="panel input-panel">
+        <div class="panel-header">
+          <h2 id="case-title">Response & Grounding Context</h2>
+          <span class="badge" id="source-count-badge">0 Sources</span>
+        </div>
+        <div class="panel-scroll-body">
+          <div class="detail-group">
+            <label>Chatbot Response</label>
+            <div id="response-text" class="content-box"></div>
+          </div>
+          <div class="detail-group">
+            <label>Reference Evidence Passages</label>
+            <div id="sources-container" class="sources-list"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Right: Atomic Claims & Entailment Verification -->
+      <section class="panel claims-panel">
+        <div class="panel-header">
+          <h2>Extracted Claims & Entailment (<span id="claim-count">0</span>)</h2>
+        </div>
+        <div class="panel-scroll-body" id="claims-container">
+          <p class="empty-state">Click "Verify Claims" to parse statements and check evidence grounding.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

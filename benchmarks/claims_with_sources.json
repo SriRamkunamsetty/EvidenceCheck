@@ -1,0 +1,61 @@
+{
+  "version": "1.0.0",
+  "cases": [
+    {
+      "case_id": "case-001",
+      "title": "Biomedical mRNA Vaccine Grounding",
+      "query": "How do mRNA COVID-19 vaccines instruct cells to build immunity?",
+      "chatbot_response": "mRNA vaccines deliver genetic instructions wrapped in lipid nanoparticles to host cells [doc-1]. The host ribosomes translate this mRNA sequence into the viral spike protein. The immune system identifies this foreign spike protein and produces neutralizing antibodies [doc-2]. The delivered mRNA molecules are naturally degraded by cellular enzymes within days and never enter the cell nucleus.",
+      "sources": [
+        {
+          "doc_id": "doc-1",
+          "title": "Lipid Nanoparticle Delivery of mRNA Vaccines - Nature Reviews",
+          "url": "https://nature.com/articles/s41578-021-00358-0",
+          "domain": "nature.com",
+          "snippet_text": "mRNA vaccines utilize lipid nanoparticles to deliver transient genetic instructions directly into the cytoplasm of host cells for ribosomal translation into target antigens.",
+          "is_trusted": true
+        },
+        {
+          "doc_id": "doc-2",
+          "title": "Immunogenicity of mRNA-based Vaccines - CDC Guidelines",
+          "url": "https://cdc.gov/vaccines/covid-19/hcp/mrna-overview.html",
+          "domain": "cdc.gov",
+          "snippet_text": "Host immune cells recognize the expressed spike protein as non-self, triggering robust T-cell activation and producing high-affinity neutralizing antibodies. The mRNA does not integrate into host genomic DNA and is degraded rapidly.",
+          "is_trusted": true
+        }
+      ]
+    },
+    {
+      "case_id": "case-002",
+      "title": "Clean Energy Market Statistic Contradiction",
+      "query": "How did global electric vehicle sales change in 2023?",
+      "chatbot_response": "Global electric vehicle sales decreased by 40% in 2023 due to regulatory bans [doc-ev]. Furthermore, consumer interest completely collapsed across North American markets.",
+      "sources": [
+        {
+          "doc_id": "doc-ev",
+          "title": "Global EV Outlook 2024 - International Energy Agency (IEA)",
+          "url": "https://iea.org/reports/global-ev-outlook-2024",
+          "domain": "iea.org",
+          "snippet_text": "Global electric car sales surged by 35% in 2023, reaching almost 14 million units worldwide, demonstrating sustained multi-regional market expansion.",
+          "is_trusted": true
+        }
+      ]
+    },
+    {
+      "case_id": "case-003",
+      "title": "History of Optical Telescopes Extrapolation",
+      "query": "Who invented the telescope?",
+      "chatbot_response": "Galileo Galilei invented the optical telescope in 1608 [doc-tele]. He personally manufactured over 500 telescopes for naval fleets across Europe.",
+      "sources": [
+        {
+          "doc_id": "doc-tele",
+          "title": "Invention of the Telescope - Stanford Encyclopedia of Science",
+          "url": "https://plato.stanford.edu/entries/galileo-telescope/",
+          "domain": "stanford.edu",
+          "snippet_text": "The earliest known patent application for an optical telescope was submitted in October 1608 by Dutch spectacle maker Hans Lippershey. Galileo constructed his own improved 20x magnification refracting instrument in 1609 after hearing reports from the Netherlands.",
+          "is_trusted": true
+        }
+      ]
+    }
+  ]
+}
